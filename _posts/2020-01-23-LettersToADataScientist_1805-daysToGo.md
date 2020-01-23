@@ -12,7 +12,7 @@ The first rule according to ML [Rule \#1](https://developers.google.com/machine-
 
 I have installed a set of software’s into my personal laptop and started coding. Besides, today I consider myself to be the busiest person in the world but in order to thrive in field of technology I have to learn continuously. When you open up this app in Jan 01, 2025 I could have evolved from the current design. I don’t know now whether I can accomplish whatever I have envisioned but the confidence that I have today, makes me feel that it’s achievable. Another interesting thing is I don’t have to spend a single penny to make my dream a reality.
 
-Looking forward to become you\!
+Looking forward to meet you\!
 
 Sincerely
 
