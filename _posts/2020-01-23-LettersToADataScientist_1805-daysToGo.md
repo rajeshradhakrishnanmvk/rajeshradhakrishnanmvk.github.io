@@ -1,6 +1,6 @@
 # Letters to Data scientist 2025
 
-Today I am a FSE, after 5 years I would like to become a Data Scientist. If I am an engineer I am supposed to have some skill set to build something. A few days before, out of curiosity I was wondering through a few sites [fast.ai](https://www.fast.ai/), [Kaggle](https://www.kaggle.com/), [Google](https://developers.google.com/machine-learning/crash-course) and planned to study Machine Learning. I am doing this just to convince one person *<span class="underline">that’s me after five year</span>*. I hit a web search “how many days from today 2025”. It gets 1,805 days, 23 January 2020 - 1 January 2025.
+Today I am a FSE, after 5 years I would like to become a Data Scientist. If I am an engineer I am supposed to have some skill set to build something. A few days before, out of curiosity I was wondering through a few sites [fast.ai](https://www.fast.ai/), [Kaggle](https://www.kaggle.com/), [Google](https://developers.google.com/machine-learning/crash-course) and planned to study Machine Learning. I am doing this just to convince one person *<span class="underline">that’s me after five year</span>*. I hit a web search “[how many days from today 2025](https://www.google.com/search?q=how+many+days+from+today+2025&rlz=1C1CHBF_enIN812IN812&oq=how+many+days+from+today+2025&aqs=chrome..69i57.1081j0j7&sourceid=chrome&ie=UTF-8)”. It gets 1,805 days, 23 January 2020 - 1 January 2025.
 
 Day \#1:
 
