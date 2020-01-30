@@ -12,7 +12,7 @@ I have to submit three assignments in the week-2 of [Machine Learning in Courser
 I need to return to [Kaggle](https://www.kaggle.com/) competitions but can’t find enough time, seems there are lot of excitement and fun. I have completed micro courses in Python and Intro to Machine Learning. As there are lot of materials around machine learning sometime getting diverted. I decided to focus on the Coursera and completed the certification after week 11 will resume Kaggle. I have submitted Kaggle’s [Titanic Machine Learning Competion](https://www.kaggle.com/c/titanic) and my current leader board ranking is 6813. I will find time to improvise this in the first quarter. Also I am half way through the [Google Crash Course](https://developers.google.com/machine-learning/crash-course) but put on hold as its kind of diversion now.
 
 I am trying to prepare myself to learn 6 hours a day, but unable to make it. I know I need to organize myself and pick one topic evolve from it. As I see lot of technology growth, I fear that I will be left behind if I don't find space with it. I dream of a day where I just code and checkin to git, its get deployed to Heroku via Circle CI. Today I have a couple of errors and one dream, hope I could get it done by end of this week.
-
+<div style="position: relative; padding-bottom: 56.22254758418741%; height: 0;"><iframe src="https://www.loom.com/embed/800ed7c1aeff49a6a7cc13725e418290" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 > Yours Sincerely,
 > 
 > Rajesh Radhakrishnan
