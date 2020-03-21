@@ -1,4 +1,4 @@
-# *Malayalam translation of original article posted [here](https://www.fast.ai/2020/03/09/coronavirus/)*
+*Malayalam translation of original article posted [here](https://www.fast.ai/2020/03/09/coronavirus/)*
 
 # കോവിഡ് -19, നിങ്ങളുടെ കമ്മ്യൂണിറ്റി, നിങ്ങളും - ഒരു ഡാറ്റ സയൻസ് കാഴ്ചപ്പാട്
 
