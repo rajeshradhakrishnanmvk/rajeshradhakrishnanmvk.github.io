@@ -10,4 +10,5 @@ I haven’t spent much on the IT infrastructure to maintain the application, the
 
 Now, I am learning [MERN](https://www.udemy.com/course/mern-stack-the-complete-guide), [Python](https://www.udemy.com/course/complete-python-developer-zero-to-mastery), [fastai](https://course.fast.ai/) and [Kubernetes](https://www.youtube.com/watch?v=brqAMyayjrI&list=PL34sAs7_26wNBRWM6BDhnonoA5FMERax0&index=9) to form automated “Dream Ops” where the time taken from idea to implementation and cost of IT infrastructure should be minimal. The application should talk about the failures and the healing process is taken care automatically. I am also attaching a video of my lab, it gives a brief on my local and cloud setup.
 
-**A walk around my lab**: <https://www.loom.com/share/cf9e37ca04224034b3cd989b2cd0c799>
+**A walk around my lab**:
+<div style="position: relative; padding-bottom: 56.22254758418741%; height: 0;"><iframe src="https://www.loom.com/embed/cf9e37ca04224034b3cd989b2cd0c799" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
