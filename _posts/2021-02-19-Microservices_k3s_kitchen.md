@@ -8,7 +8,7 @@ Plan
 
 ![](/images/2021-02-19-Microservices_k3s_kitchen/media/image1.png)
 
-The application, “kitchen”, is a book management service, which has a angular frontend microservice, contact the ‘identity server’ to get authenticated and authorize to access Book Service & Chapter service. The four services are dockerized and deployed to k3s cluster using helm installation. I have posted a [video](https://youtu.be/ieyR04C1DxE) explaining the entire process. This will be my infrastructure & architecture to onboard my machine learning models. There is long way to go, hope if everything falls in place as planned I think I am will be close to you.
+The application, “kitchen”, is a book management service, which has a angular frontend microservice, contact the ‘identity server’ to get authenticated and authorize to access Book Service & Chapter service. The four services are dockerized and deployed to k3s cluster using helm installation. I have posted a [video](https://youtu.be/GStqMCW0B5g) explaining the entire process. This will be my infrastructure & architecture to onboard my machine learning models. There is long way to go, hope if everything falls in place as planned I think I am will be close to you.
 
 Looking forward to become you\!
 
