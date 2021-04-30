@@ -20,7 +20,7 @@ Prologue: If knowledge = money, I belong to the middle class, this guide is to b
 
 Design:
 
-![kitchen.png](2020-11-23-Full_Stack_Deployment_in_Kuberentes/media/image1.png)
+![kitchen.png](/images/2020-11-23-Full_Stack_Deployment_in_Kuberentes/media/image1.png)
 
 Prerequisites:
 
