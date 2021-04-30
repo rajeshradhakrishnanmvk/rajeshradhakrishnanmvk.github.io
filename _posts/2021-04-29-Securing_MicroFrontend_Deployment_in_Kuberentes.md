@@ -23,7 +23,7 @@ The application is a set of microservices, one angular frontend that connects to
 2.  Deploy the ingress with the secret key
 
 3.  Troubleshoot whether the certificate is the issued from Let’s Encrypt (stage/prod api)
-```
+
 kubectl apply -f ./cert-manager/civoissuer.prod.yaml
 
 kubectl apply -f ingress-cert-civo.yaml
@@ -33,7 +33,7 @@ kubectl get issuer -n \<your namespace\>
 kubectl get certificates kitchen-n \<your namespace\>
 
 kubectl describe certificates \<your secret\> -n \<your namespace\>
-```
+
   - At this step I got an error “certificate public key must be different than account key”.
 
   - I removed the certificates and repeated the steps with unique secret key which is different from the issuer.yaml
@@ -43,7 +43,7 @@ kubectl describe certificates \<your secret\> -n \<your namespace\>
 2.  For Rancher as Service, I have done a video [here](https://www.youtube.com/watch?v=GStqMCW0B5g), its basically to taking care of my deployed services and cluster as a whole. The free life time access is available at https://kubernautic.com/
 
 I have used [POPEYE](https://popeyecli.io/) to sanitize the cluster, the command and usage:
-```
+
 > wget https://github.com/derailed/popeye/releases/download/v0.9.0/popeye\_Linux\_x86\_64.tar.gz
 > 
 > tar -xvf popeye\_Linux\_x86\_64.tar.gz
@@ -51,7 +51,7 @@ I have used [POPEYE](https://popeyecli.io/) to sanitize the cluster, the command
 > mv popeye /usr/local/bin/
 > 
 > POPEYE\_REPORT\_DIR=/mnt/e/Kubernetes/ popeye --save --out html --output-file report.html
-```
+
 3.  After setting up everything my next level was to gain knowledge on a few frontend framework/library like Angular/React and build a micro- front-end based architecture, I am using the [single-spa](https://single-spa.js.org/) framework to bring together a couple of websites into CIVO. So far I am able to build and deploy the package, only thing is getting stuck with the ingress setup,
 
 ![](/images/2021-04-29-Securing_MicroFrontend_Deployment_in_Kuberentes/media/image2.png)
