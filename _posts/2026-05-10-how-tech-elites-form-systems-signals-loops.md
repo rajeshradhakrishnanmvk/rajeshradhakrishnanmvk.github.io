@@ -1,6 +1,8 @@
 
 # How Tech Elites Form: Systems, Signals, and Loops
 
+![Career Architecture: Systems, Signals, and Loops](/assets/images/tech-elites-career-architecture.png)
+
 Every senior engineer who's been turned down for Staff has asked the same question: "What am I missing?" They ship features. They mentor juniors. They review PRs. They're technically excellent. And yet, the promotion committee says no.
 
 They're not missing skills. They're missing the system.
