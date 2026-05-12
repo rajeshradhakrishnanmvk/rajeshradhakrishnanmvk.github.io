@@ -1,5 +1,10 @@
 ## The .NET Authentication Identity Crisis
 
+<video controls width="100%" poster="/assets/images/auth-identity-crisis-poster.png" style="border-radius: 8px; margin: 1.5em 0;">
+  <source src="/assets/images/auth-identity-crisis.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 Every .NET developer has been there. You scaffold a new project, check the "Individual Accounts" box, and Microsoft drops a mountain of Identity scaffolding into your codebase — 47 files of Razor Pages, a dozen service registrations, and an Entity Framework schema that ships 8 tables you'll never use. Meanwhile, the auth middleware you actually need requires a different NuGet package with a different token format and a different set of breaking changes every major release.
 
 This is the .NET authentication identity crisis — and it's not about security. It's about identity, the library.
