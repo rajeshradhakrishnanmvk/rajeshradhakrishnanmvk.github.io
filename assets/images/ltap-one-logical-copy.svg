@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 700" role="img" aria-labelledby="ltapTitle ltapDesc">
+  <title id="ltapTitle">LTAP storage path and the readers around it</title>
+  <desc id="ltapDesc">A commit flows from Postgres compute through safekeepers to pageservers and object storage, where a columnar Parquet copy is written. Lakehouse RT and Change Data Feed read that data under Unity Catalog. Synced tables move lakehouse data back into Postgres.</desc>
+  <rect width="920" height="700" fill="#f4f7fb"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#102033">
+    <rect x="36" y="28" width="400" height="78" rx="8" fill="#e7eef8" stroke="#021a40"/>
+    <text x="56" y="54" font-size="16" font-weight="700">Applications, services, agents</text>
+    <text x="56" y="76" font-size="13">Postgres protocol. Roles, GRANT, and REVOKE.</text>
+    <text x="56" y="94" font-size="13">Unity Catalog does not govern this connection.</text>
+
+    <line x1="236" y1="106" x2="236" y2="132" stroke="#021a40" stroke-width="1.5"/>
+    <polygon points="236,140 231,130 241,130" fill="#021a40"/>
+
+    <rect x="36" y="140" width="400" height="78" rx="8" fill="#d9e6f5" stroke="#021a40"/>
+    <text x="56" y="166" font-size="16" font-weight="700">Stateless Postgres compute</text>
+    <text x="56" y="188" font-size="13">Shared buffers and a local cache only.</text>
+    <text x="56" y="206" font-size="13">No durable data on this node.</text>
+
+    <line x1="236" y1="218" x2="236" y2="242" stroke="#021a40" stroke-width="1.5"/>
+    <polygon points="236,250 231,240 241,240" fill="#021a40"/>
+    <text x="248" y="240" font-size="12">WAL</text>
+
+    <rect x="36" y="250" width="400" height="72" rx="8" fill="#d7f0e6" stroke="#021a40"/>
+    <text x="56" y="276" font-size="16" font-weight="700">Safekeepers</text>
+    <text x="56" y="298" font-size="13">Commit when a quorum has the WAL record.</text>
+
+    <line x1="236" y1="322" x2="236" y2="346" stroke="#021a40" stroke-width="1.5"/>
+    <polygon points="236,354 231,344 241,344" fill="#021a40"/>
+    <text x="248" y="344" font-size="12">async, off the commit path</text>
+
+    <rect x="36" y="354" width="400" height="72" rx="8" fill="#d7f0e6" stroke="#021a40"/>
+    <text x="56" y="380" font-size="16" font-weight="700">Pageservers</text>
+    <text x="56" y="402" font-size="13">Materialize page versions at a log sequence number.</text>
+
+    <line x1="236" y1="426" x2="236" y2="450" stroke="#021a40" stroke-width="1.5"/>
+    <polygon points="236,458 231,448 241,448" fill="#021a40"/>
+    <text x="248" y="448" font-size="12">flush and columnar transcode</text>
+
+    <rect x="36" y="458" width="400" height="96" rx="8" fill="#efe6f8" stroke="#021a40"/>
+    <text x="56" y="484" font-size="16" font-weight="700">Object storage</text>
+    <text x="56" y="506" font-size="13">Columnar Parquet, readable as Delta and Iceberg.</text>
+    <text x="56" y="524" font-size="13">Postgres pages remain for point reads.</text>
+    <text x="56" y="542" font-size="13">Indexes stay in their original layout.</text>
+
+    <rect x="480" y="28" width="404" height="78" rx="8" fill="#f8efd4" stroke="#021a40"/>
+    <text x="500" y="54" font-size="16" font-weight="700">Unity Catalog</text>
+    <text x="500" y="76" font-size="13">Permissions, lineage, and audit for analytical reads.</text>
+    <text x="500" y="94" font-size="13">The registered catalog is read-only.</text>
+
+    <rect x="480" y="140" width="404" height="132" rx="8" fill="#efe6f8" stroke="#021a40"/>
+    <text x="500" y="166" font-size="16" font-weight="700">Lakehouse//RT</text>
+    <text x="500" y="188" font-size="13">Beta on AWS. Not available on Google Cloud.</text>
+    <text x="500" y="210" font-size="13">Reads the columnar copy for the bulk of the query.</text>
+    <text x="500" y="228" font-size="13">Asks Postgres only for the current LSN.</text>
+    <text x="500" y="246" font-size="13">Merges the unflushed tail from the pageserver.</text>
+
+    <rect x="480" y="300" width="404" height="132" rx="8" fill="#efe6f8" stroke="#021a40"/>
+    <text x="500" y="326" font-size="16" font-weight="700">Lakebase Change Data Feed</text>
+    <text x="500" y="348" font-size="13">Public Preview on AWS. Not on Google Cloud.</text>
+    <text x="500" y="370" font-size="13">wal2delta runs inside Lakebase compute.</text>
+    <text x="500" y="388" font-size="13">Append-only Delta history, flushed about every 15s.</text>
+    <text x="500" y="406" font-size="13">A derived change log, separate from the transcode.</text>
+
+    <rect x="480" y="468" width="404" height="120" rx="8" fill="#fde8d4" stroke="#021a40"/>
+    <text x="500" y="494" font-size="16" font-weight="700">Synced tables, the other direction</text>
+    <text x="500" y="516" font-size="13">GA. A lakehouse table is served into Postgres.</text>
+    <text x="500" y="534" font-size="13">Managed pipeline. Databricks calls it reverse ETL.</text>
+    <text x="500" y="552" font-size="13">Direct Writes is a beta bulk-load path on AWS.</text>
+    <text x="500" y="570" font-size="13">Each table still has a single writer.</text>
+
+    <path d="M436 506 H468" stroke="#021a40" stroke-width="1.5" fill="none"/>
+    <path d="M468 200 H480" stroke="#021a40" stroke-width="1.5" fill="none"/>
+    <polygon points="480,200 470,195 470,205" fill="#021a40"/>
+    <path d="M468 366 H480" stroke="#021a40" stroke-width="1.5" fill="none"/>
+    <polygon points="480,366 470,361 470,371" fill="#021a40"/>
+
+    <path d="M480 528 H456 V179 H436" stroke="#021a40" stroke-width="1.5" fill="none"/>
+    <polygon points="436,179 446,174 446,184" fill="#021a40"/>
+    <text x="392" y="176" font-size="12">lookup</text>
+  </g>
+</svg>
