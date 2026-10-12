@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 640" role="img" aria-labelledby="nearestTitle nearestDesc">
+  <title id="nearestTitle">NEAREST BY exact and approximate paths</title>
+  <desc id="nearestDesc">A left-side query batch joins a right-side table under an EXACT or APPROX contract. EXACT scores the target exhaustively. APPROX may probe a liquid-clustered Delta IVF index and brute-force files added since the last refresh. vector_search against an AI Search index is a separate serving path.</desc>
+  <rect width="920" height="640" fill="#f4f7fb"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#102033">
+    <rect x="36" y="24" width="400" height="78" rx="8" fill="#e7eef8" stroke="#021a40"/>
+    <text x="56" y="50" font-size="16" font-weight="700">Query rows, the left side</text>
+    <text x="56" y="72" font-size="13">Each row anchors the search. The join is not commutative.</text>
+    <text x="56" y="90" font-size="13">Streaming sources are rejected.</text>
+
+    <line x1="236" y1="102" x2="236" y2="128" stroke="#021a40" stroke-width="1.5"/>
+    <polygon points="236,136 231,126 241,126" fill="#021a40"/>
+
+    <rect x="36" y="136" width="400" height="96" rx="8" fill="#f8efd4" stroke="#021a40"/>
+    <text x="56" y="162" font-size="16" font-weight="700">The contract, written in the SQL</text>
+    <text x="56" y="184" font-size="13">EXACT: the true top-k under the expression.</text>
+    <text x="56" y="202" font-size="13">APPROX: the optimizer may use an index.</text>
+    <text x="56" y="220" font-size="13">k is 1 to 100,000. Default is 1.</text>
+
+    <line x1="150" y1="232" x2="150" y2="258" stroke="#021a40" stroke-width="1.5"/>
+    <polygon points="150,266 145,256 155,256" fill="#021a40"/>
+    <text x="158" y="252" font-size="12">EXACT</text>
+
+    <line x1="330" y1="232" x2="330" y2="258" stroke="#021a40" stroke-width="1.5"/>
+    <polygon points="330,266 325,256 335,256" fill="#021a40"/>
+    <text x="338" y="252" font-size="12">APPROX</text>
+
+    <rect x="36" y="266" width="188" height="132" rx="8" fill="#efe6f8" stroke="#021a40"/>
+    <text x="50" y="292" font-size="15" font-weight="700">Exhaustive score</text>
+    <text x="50" y="314" font-size="12">Photon fused operator on</text>
+    <text x="50" y="332" font-size="12">the Databricks Runtime path.</text>
+    <text x="50" y="350" font-size="12">Spark 4.2 rewrites to ordinary</text>
+    <text x="50" y="368" font-size="12">operators. No new kernel.</text>
+    <text x="50" y="386" font-size="12">Cost grows with both sides.</text>
+
+    <rect x="248" y="266" width="188" height="132" rx="8" fill="#d7f0e6" stroke="#021a40"/>
+    <text x="262" y="292" font-size="15" font-weight="700">IVF, if one exists</text>
+    <text x="262" y="314" font-size="12">Delta table, liquid-clustered</text>
+    <text x="262" y="332" font-size="12">by centroid id.</text>
+    <text x="262" y="350" font-size="12">Probe clusters, then score.</text>
+    <text x="262" y="368" font-size="12">New files since refresh are</text>
+    <text x="262" y="386" font-size="12">brute-forced and merged.</text>
+
+    <line x1="236" y1="398" x2="236" y2="424" stroke="#021a40" stroke-width="1.5"/>
+    <polygon points="236,432 231,422 241,422" fill="#021a40"/>
+
+    <rect x="36" y="432" width="400" height="78" rx="8" fill="#d9e6f5" stroke="#021a40"/>
+    <text x="56" y="458" font-size="16" font-weight="700">Up to k rows per query row</text>
+    <text x="56" y="480" font-size="13">INNER drops a query row with no candidate.</text>
+    <text x="56" y="498" font-size="13">LEFT OUTER keeps it, with NULL target columns.</text>
+
+    <rect x="480" y="24" width="404" height="114" rx="8" fill="#fde8d4" stroke="#021a40"/>
+    <text x="500" y="50" font-size="16" font-weight="700">Not this join: vector_search</text>
+    <text x="500" y="72" font-size="13">Public Preview. An AI Search index and endpoint.</text>
+    <text x="500" y="90" font-size="13">A batch is LATERAL, one call per driving row.</text>
+    <text x="500" y="108" font-size="13">num_results above 100 is unsupported.</text>
+    <text x="500" y="126" font-size="13">Classic SQL warehouses are excluded.</text>
+
+    <rect x="480" y="166" width="404" height="132" rx="8" fill="#efe6f8" stroke="#021a40"/>
+    <text x="500" y="192" font-size="16" font-weight="700">Target table, the right side</text>
+    <text x="500" y="214" font-size="13">Embeddings stay in the lakehouse table.</text>
+    <text x="500" y="232" font-size="13">Restrict it with a subquery before the join.</text>
+    <text x="500" y="250" font-size="13">ARRAY of FLOAT, same dimension both sides.</text>
+    <text x="500" y="268" font-size="13">A zero-magnitude vector makes cosine NULL.</text>
+    <text x="500" y="286" font-size="13">Governance stays with the table you scan.</text>
+
+    <rect x="480" y="326" width="404" height="114" rx="8" fill="#f8efd4" stroke="#021a40"/>
+    <text x="500" y="352" font-size="16" font-weight="700">What APPROX still needs</text>
+    <text x="500" y="374" font-size="13">The SQL reference does not publish index DDL.</text>
+    <text x="500" y="392" font-size="13">It does not name an nprobe setting.</text>
+    <text x="500" y="410" font-size="13">EXPLAIN before promising partition pruning.</text>
+    <text x="500" y="428" font-size="13">The compensation sentence covers files added.</text>
+
+    <rect x="480" y="468" width="404" height="96" rx="8" fill="#e7eef8" stroke="#021a40"/>
+    <text x="500" y="494" font-size="16" font-weight="700">Two engines, two promises</text>
+    <text x="500" y="516" font-size="13">Spark 4.2.0: the join and a brute-force rewrite.</text>
+    <text x="500" y="534" font-size="13">Databricks Runtime: Photon GEMM, plus the index</text>
+    <text x="500" y="552" font-size="13">the 5 October post describes. Not portable yet.</text>
+  </g>
+</svg>
