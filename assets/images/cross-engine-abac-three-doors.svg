@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 760" role="img" aria-labelledby="abacTitle abacDesc">
+  <title id="abacTitle">Three ways a fine-grained policy can leave Unity Catalog</title>
+  <desc id="abacDesc">Unity Catalog evaluates the policy. Cross-engine ABAC, generally available on 1 October 2026, sanitizes rows in a serverless filtering layer before an external engine sees them. Iceberg read restrictions hand nine masking actions and a row filter to a trusted engine, which must enforce them or fail. Catalog labels move key-value metadata to another catalog and do not enforce a decision.</desc>
+  <rect width="920" height="760" fill="#f4f7fb"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#102033">
+    <rect x="36" y="24" width="848" height="78" rx="8" fill="#e7eef8" stroke="#021a40"/>
+    <text x="56" y="50" font-size="16" font-weight="700">Unity Catalog evaluates the policy for this principal</text>
+    <text x="56" y="72" font-size="13">Tags, UDFs, TO, and EXCEPT stay in the catalog. The policy text does not travel.</text>
+    <text x="56" y="90" font-size="13">What leaves depends on which door the reader is standing at.</text>
+
+    <line x1="250" y1="102" x2="250" y2="128" stroke="#021a40" stroke-width="1.5"/>
+    <polygon points="250,136 245,126 255,126" fill="#021a40"/>
+    <line x1="670" y1="102" x2="670" y2="128" stroke="#021a40" stroke-width="1.5"/>
+    <polygon points="670,136 665,126 675,126" fill="#021a40"/>
+
+    <rect x="36" y="140" width="430" height="292" rx="8" fill="#d7f0e6" stroke="#021a40"/>
+    <text x="56" y="166" font-size="16" font-weight="700">Centralized enforcement</text>
+    <text x="56" y="188" font-size="13">Cross-engine ABAC. GA in the 1 October release notes.</text>
+    <text x="56" y="210" font-size="13">Documented client: Apache Spark, Delta or Iceberg.</text>
+    <text x="56" y="232" font-size="13">A serverless layer filters and returns sanitized rows.</text>
+    <text x="56" y="254" font-size="13">The external engine is not asked to mask anything.</text>
+    <text x="56" y="276" font-size="13">Reads only, while a fine-grained policy applies.</text>
+    <text x="56" y="298" font-size="13">A writer must be exempt from that policy.</text>
+    <text x="56" y="320" font-size="13">Managed table, catalog commits, external data access.</text>
+    <text x="56" y="342" font-size="13">OAuth machine-to-machine, or a personal access token.</text>
+    <text x="56" y="364" font-size="13">Usage product: EXTERNAL_COMPATIBILITY.</text>
+    <text x="56" y="386" font-size="13">This is the door for an engine the user controls.</text>
+    <text x="56" y="408" font-size="13">DuckDB and Starburst are not in the October page.</text>
+
+    <rect x="490" y="140" width="394" height="292" rx="8" fill="#efe6f8" stroke="#021a40"/>
+    <text x="510" y="166" font-size="16" font-weight="700">Delegated enforcement</text>
+    <text x="510" y="188" font-size="13">Iceberg read-restrictions on loadTable.</text>
+    <text x="510" y="210" font-size="13">Spec. Not the October Databricks product page.</text>
+    <text x="510" y="232" font-size="13">Nine masking actions, plus a row-filter predicate.</text>
+    <text x="510" y="254" font-size="13">Columns are field ids, not names.</text>
+    <text x="510" y="276" font-size="13">Filter the raw values, then apply the masks.</text>
+    <text x="510" y="298" font-size="13">A reader that cannot apply one fails the query.</text>
+    <text x="510" y="320" font-size="13">It must not return raw, partial, or empty rows.</text>
+    <text x="510" y="342" font-size="13">Trust between catalog and engine is out of scope.</text>
+    <text x="510" y="364" font-size="13">A client that ignores the object can read the files.</text>
+    <text x="510" y="386" font-size="13">SQL UDFs and lookup subqueries do not fit.</text>
+    <text x="510" y="408" font-size="13">Do not cache the response across principals.</text>
+
+    <rect x="36" y="456" width="848" height="168" rx="8" fill="#f8efd4" stroke="#021a40"/>
+    <text x="56" y="482" font-size="16" font-weight="700">Catalog labels, the third door</text>
+    <text x="56" y="504" font-size="13">Key-value metadata on the table and on each field id. The spec lets a client ignore them.</text>
+    <text x="56" y="526" font-size="13">A consuming catalog maps the pairs onto its own tags and enforces with its own policies.</text>
+    <text x="56" y="548" font-size="13">No shared meaning is defined. A label does not mask a column by itself.</text>
+    <text x="56" y="570" font-size="13">Use this door when the destination is another catalog, not when it is a Spark job.</text>
+    <text x="56" y="592" font-size="13">The 10 September Databricks post is the map. The 1 October pages are the two contracts.</text>
+
+    <rect x="36" y="648" width="848" height="84" rx="8" fill="#fde8d4" stroke="#021a40"/>
+    <text x="56" y="674" font-size="16" font-weight="700">Inside Databricks is a fourth bill, not this feature</text>
+    <text x="56" y="696" font-size="13">Dedicated-compute fine-grained access control is FINE_GRAINED_ACCESS_CONTROL.</text>
+    <text x="56" y="714" font-size="13">A SQL warehouse query is not cross-engine ABAC. Do not add the two usage lines together.</text>
+  </g>
+</svg>
