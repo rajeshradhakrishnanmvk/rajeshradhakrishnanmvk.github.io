@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 700" role="img" aria-labelledby="fvTitle fvDesc">
+  <title id="fvTitle">One Feature View, three clocks</title>
+  <desc id="fvDesc">A Feature View is one Unity Catalog definition. Batch materialization writes an offline Delta table and, for most aggregations, an online Lakebase table. Streaming materialization writes online only and does not backfill. Request-time and derived features are computed at training and serving and are not materialized.</desc>
+  <rect width="920" height="700" fill="#f4f7fb"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#102033">
+    <rect x="36" y="24" width="848" height="96" rx="8" fill="#e7eef8" stroke="#021a40"/>
+    <text x="56" y="50" font-size="16" font-weight="700">One Feature in Unity Catalog</text>
+    <text x="56" y="72" font-size="13">Source, entity, time column, and function. Local until register_feature.</text>
+    <text x="56" y="92" font-size="13">READ FEATURE reads the definition. SELECT reads the rows. They are different grants.</text>
+    <text x="56" y="110" font-size="13">The definition does not choose the clock. materialize_features does.</text>
+
+    <line x1="180" y1="120" x2="180" y2="146" stroke="#021a40" stroke-width="1.5"/>
+    <polygon points="180,154 175,144 185,144" fill="#021a40"/>
+    <line x1="460" y1="120" x2="460" y2="146" stroke="#021a40" stroke-width="1.5"/>
+    <polygon points="460,154 455,144 465,144" fill="#021a40"/>
+    <line x1="740" y1="120" x2="740" y2="146" stroke="#021a40" stroke-width="1.5"/>
+    <polygon points="740,154 735,144 745,144" fill="#021a40"/>
+
+    <rect x="36" y="158" width="276" height="360" rx="8" fill="#d7f0e6" stroke="#021a40"/>
+    <text x="52" y="184" font-size="16" font-weight="700">Batch clock</text>
+    <text x="52" y="206" font-size="13">CronSchedule or TableTrigger.</text>
+    <text x="52" y="226" font-size="13">Tumbling and sliding windows.</text>
+    <text x="52" y="246" font-size="13">Offline Delta table for aggregations.</text>
+    <text x="52" y="266" font-size="13">Online Lakebase needs both configs,</text>
+    <text x="52" y="284" font-size="13">except ColumnSelection and the</text>
+    <text x="52" y="302" font-size="13">Last plus RollingWindow case.</text>
+    <text x="52" y="322" font-size="13">Other batch rolling windows are</text>
+    <text x="52" y="340" font-size="13">computed at training time.</text>
+    <text x="52" y="360" font-size="13">A Delta source uses change data feed.</text>
+    <text x="52" y="380" font-size="13">TableTrigger throttle: the 12 October</text>
+    <text x="52" y="398" font-size="13">materialize page and the API page</text>
+    <text x="52" y="416" font-size="13">do not describe the same cap.</text>
+    <text x="52" y="436" font-size="13">Expiry of a bounded Last value</text>
+    <text x="52" y="454" font-size="13">waits for the next source commit.</text>
+    <text x="52" y="474" font-size="13">Time passing does not refresh it.</text>
+    <text x="52" y="494" font-size="13">Do not mix this call with a stream.</text>
+
+    <rect x="322" y="158" width="276" height="360" rx="8" fill="#efe6f8" stroke="#021a40"/>
+    <text x="338" y="184" font-size="16" font-weight="700">Stream clock</text>
+    <text x="338" y="206" font-size="13">StreamingMode. Online only.</text>
+    <text x="338" y="226" font-size="13">No offline materialization.</text>
+    <text x="338" y="246" font-size="13">Kafka StreamSource, or a Delta</text>
+    <text x="338" y="264" font-size="13">table that already has CDF.</text>
+    <text x="338" y="284" font-size="13">RollingWindow. SawtoothWindow</text>
+    <text x="338" y="302" font-size="13">is Beta, and longer than two days.</text>
+    <text x="338" y="322" font-size="13">Materialization does not backfill.</text>
+    <text x="338" y="342" font-size="13">The online aggregate is incomplete</text>
+    <text x="338" y="360" font-size="13">until the window has filled.</text>
+    <text x="338" y="380" font-size="13">Enterprise tier. A Lakebase region.</text>
+    <text x="338" y="400" font-size="13">Training reads the ingestion table.</text>
+    <text x="338" y="420" font-size="13">p99 of 200 ms excludes restarts.</text>
+    <text x="338" y="440" font-size="13">Pipelines restart twice a week.</text>
+    <text x="338" y="458" font-size="13">A restart can take up to a minute.</text>
+    <text x="338" y="478" font-size="13">Column selection keeps the latest</text>
+    <text x="338" y="496" font-size="13">Kafka event, even if it is late.</text>
+
+    <rect x="608" y="158" width="276" height="360" rx="8" fill="#f8eed9" stroke="#021a40"/>
+    <text x="624" y="184" font-size="16" font-weight="700">Request clock</text>
+    <text x="624" y="206" font-size="13">RequestSource, CustomUDF,</text>
+    <text x="624" y="224" font-size="13">FeatureViewSource.</text>
+    <text x="624" y="244" font-size="13">Nothing is materialized.</text>
+    <text x="624" y="264" font-size="13">Training computes the value.</text>
+    <text x="624" y="284" font-size="13">Serving computes it again.</text>
+    <text x="624" y="304" font-size="13">Materialize the table-backed leaves.</text>
+    <text x="624" y="324" font-size="13">Do not pass the derived feature.</text>
+    <text x="624" y="344" font-size="13">Depth five, including the base.</text>
+    <text x="624" y="364" font-size="13">Twenty direct upstream features.</text>
+    <text x="624" y="384" font-size="13">Five Unity Catalog UDF calls</text>
+    <text x="624" y="402" font-size="13">per query, graph included.</text>
+    <text x="624" y="422" font-size="13">Parameter types must match.</text>
+    <text x="624" y="442" font-size="13">No implicit numeric cast.</text>
+    <text x="624" y="462" font-size="13">Request types are scalars.</text>
+    <text x="624" y="482" font-size="13">FeatureViewSource wants client</text>
+    <text x="624" y="500" font-size="13">0.18.0 or later.</text>
+
+    <rect x="36" y="536" width="848" height="132" rx="8" fill="#e7eef8" stroke="#021a40"/>
+    <text x="56" y="562" font-size="16" font-weight="700">The other authoring path is still on the 12 October strategy table</text>
+    <text x="56" y="584" font-size="13">Feature tables, which you populate, remain the row for Delta Sharing, a third-party online store,</text>
+    <text x="56" y="604" font-size="13">or a GA-only authoring path. Feature Views are the recommended row for most new work.</text>
+    <text x="56" y="624" font-size="13">A compliance security profile workspace does not get Feature Views until mid-November 2026.</text>
+    <text x="56" y="644" font-size="13">Streaming materialization supports only the Databricks Online Feature Store.</text>
+  </g>
+</svg>
