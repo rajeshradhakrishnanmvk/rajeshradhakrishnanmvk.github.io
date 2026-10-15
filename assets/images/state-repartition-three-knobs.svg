@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 760" role="img" aria-labelledby="srTitle srDesc">
+  <title id="srTitle">Three knobs on a stateful checkpoint</title>
+  <desc id="srDesc">A stateful checkpoint stores one RocksDB instance per partition, and each key hashes to one of them. Changing spark.sql.shuffle.partitions is ignored. State rebalancing keeps the same count and moves instances onto new executors. spark.sql.streaming.stateStore.partitions restarts the query, finishes the pending microbatch, and runs one control batch that rehashes state into a new count.</desc>
+  <rect width="920" height="760" fill="#f4f7fb"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#102033">
+    <rect x="36" y="24" width="848" height="96" rx="8" fill="#e7eef8" stroke="#021a40"/>
+    <text x="56" y="50" font-size="16" font-weight="700">The checkpoint is the layout</text>
+    <text x="56" y="72" font-size="13">One RocksDB instance per partition. A key hashes to one instance.</text>
+    <text x="56" y="92" font-size="13">The count was written when the checkpoint was created. A later shuffle.partitions value is not read.</text>
+    <text x="56" y="110" font-size="13">RocksDB is required. The provider cannot be swapped without a new checkpoint.</text>
+
+    <line x1="180" y1="120" x2="180" y2="146" stroke="#021a40" stroke-width="1.5"/>
+    <polygon points="180,154 175,144 185,144" fill="#021a40"/>
+    <line x1="460" y1="120" x2="460" y2="146" stroke="#021a40" stroke-width="1.5"/>
+    <polygon points="460,154 455,144 465,144" fill="#021a40"/>
+    <line x1="740" y1="120" x2="740" y2="146" stroke="#021a40" stroke-width="1.5"/>
+    <polygon points="740,154 735,144 745,144" fill="#021a40"/>
+
+    <rect x="36" y="158" width="276" height="400" rx="8" fill="#f8efd4" stroke="#021a40"/>
+    <text x="52" y="184" font-size="16" font-weight="700">Ignored change</text>
+    <text x="52" y="208" font-size="13">Set spark.sql.shuffle.partitions.</text>
+    <text x="52" y="228" font-size="13">Restart. The old count still runs.</text>
+    <text x="52" y="248" font-size="13">The lock is there so a new hash</text>
+    <text x="52" y="266" font-size="13">cannot point at an empty instance</text>
+    <text x="52" y="284" font-size="13">while the bytes sit in the old one.</text>
+    <text x="52" y="312" font-size="13">The October stateful-streaming page</text>
+    <text x="52" y="330" font-size="13">still prints this as the rule, then</text>
+    <text x="52" y="348" font-size="13">carves out Runtime 18 underneath it.</text>
+    <text x="52" y="376" font-size="13">A new checkpoint location is the</text>
+    <text x="52" y="394" font-size="13">old way to apply a new count.</text>
+    <text x="52" y="412" font-size="13">That path drops the state.</text>
+    <text x="52" y="440" font-size="13">Stateless queries are not this box.</text>
+    <text x="52" y="458" font-size="13">Their shuffle count can change</text>
+    <text x="52" y="476" font-size="13">without a new checkpoint.</text>
+    <text x="52" y="504" font-size="13">They have no RocksDB layout to move.</text>
+
+    <rect x="322" y="158" width="276" height="400" rx="8" fill="#efe6f8" stroke="#021a40"/>
+    <text x="338" y="184" font-size="16" font-weight="700">Same count, new executors</text>
+    <text x="338" y="208" font-size="13">State rebalancing.</text>
+    <text x="338" y="228" font-size="13">A cluster resize moves instances.</text>
+    <text x="338" y="246" font-size="13">The partition count stays.</text>
+    <text x="338" y="274" font-size="13">State loads from cloud storage</text>
+    <text x="338" y="292" font-size="13">onto the new executors.</text>
+    <text x="338" y="310" font-size="13">Micro-batches can slow while it loads.</text>
+    <text x="338" y="338" font-size="13">On for Lakeflow streaming by default.</text>
+    <text x="338" y="356" font-size="13">Elsewhere, from Runtime 11.3 LTS,</text>
+    <text x="338" y="374" font-size="13">the stateRebalancing config.</text>
+    <text x="338" y="402" font-size="13">This does not fix a count of 200</text>
+    <text x="338" y="420" font-size="13">that no longer matches the cores.</text>
+    <text x="338" y="438" font-size="13">The sizing note is still 1 to 2 times</text>
+    <text x="338" y="456" font-size="13">the cores. Rebalancing does not</text>
+    <text x="338" y="474" font-size="13">rewrite that number.</text>
+    <text x="338" y="502" font-size="13">A hot key still hashes to one instance.</text>
+
+    <rect x="608" y="158" width="276" height="400" rx="8" fill="#d7f0e6" stroke="#021a40"/>
+    <text x="624" y="184" font-size="16" font-weight="700">New count, same checkpoint</text>
+    <text x="624" y="208" font-size="13">spark.sql.streaming.</text>
+    <text x="624" y="226" font-size="13">stateStore.partitions.</text>
+    <text x="624" y="246" font-size="13">It wins over shuffle.partitions.</text>
+    <text x="624" y="274" font-size="13">Stop. Set. Start the same path.</text>
+    <text x="624" y="294" font-size="13">Finish the last planned microbatch.</text>
+    <text x="624" y="314" font-size="13">Then one repartition batch.</text>
+    <text x="624" y="342" font-size="13">durationMs controlBatch.REPARTITION</text>
+    <text x="624" y="360" font-size="13">is the duration, after the next batch.</text>
+    <text x="624" y="388" font-size="13">A failed or abandoned batch blocks</text>
+    <text x="624" y="406" font-size="13">the next count. Retry that batch.</text>
+    <text x="624" y="434" font-size="13">RocksDB. Runtime 18.</text>
+    <text x="624" y="452" font-size="13">Lakeflow sets the same key on</text>
+    <text x="624" y="470" font-size="13">the table or append_flow decorator.</text>
+    <text x="624" y="498" font-size="13">Not a live resize. A maintenance pause.</text>
+
+    <rect x="36" y="578" width="848" height="156" rx="8" fill="#ffffff" stroke="#021a40"/>
+    <text x="56" y="604" font-size="16" font-weight="700">What I would write next to the diagram</text>
+    <text x="56" y="628" font-size="13">13 October release notes: generally available. 14 September post and the 10 June runtime bullet: Public Preview.</text>
+    <text x="56" y="648" font-size="13">Runtime 18 is Spark 4.1.0. Spark 4.1 has the stateless shuffle change. The Spark 4.2 runner is not user-facing.</text>
+    <text x="56" y="668" font-size="13">A hot key is still one partition after the rehash. More partitions share the same per-node RocksDB memory cap.</text>
+    <text x="56" y="688" font-size="13">The TransformWithState method in the runtime notes is not on the feature page. I would not call it from a runbook.</text>
+    <text x="56" y="708" font-size="13">An abandoned repartition has to be retried at the same count before a different count is legal.</text>
+  </g>
+</svg>
