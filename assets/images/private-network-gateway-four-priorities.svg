@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 640" role="img" aria-labelledby="pngTitle pngDesc">
+  <title id="pngTitle">Four priorities in front of a private network gateway</title>
+  <desc id="pngDesc">Outbound serverless traffic matches the first path that fits. Private Link is first. Cloud backbone endpoints, including Azure Blob storage, are second and cannot be overridden. The private network gateway is third, and only for listed DNS names or for the traffic that remains in all-traffic mode. Default serverless egress is last. The gateway attaches through one subnet inside a network connectivity configuration.</desc>
+  <rect width="920" height="640" fill="#f4f7fb"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#102033">
+    <rect x="36" y="24" width="848" height="78" rx="8" fill="#e7eef8" stroke="#021a40"/>
+    <text x="56" y="50" font-size="16" font-weight="700">First match wins. The subnet is the attachment, not the route.</text>
+    <text x="56" y="72" font-size="13">One NCC in the workspace region. Azure injects into a delegated subnet. AWS places an interface and a VPC Lattice gateway.</text>
+    <text x="56" y="90" font-size="13">Workspace controls run before traffic leaves. After the subnet, the customer's routes, DNS, and firewalls decide.</text>
+
+    <rect x="36" y="122" width="200" height="292" rx="8" fill="#f8efd4" stroke="#021a40"/>
+    <text x="50" y="148" font-size="15" font-weight="700">1. Private Link</text>
+    <text x="50" y="174" font-size="13">A private endpoint</text>
+    <text x="50" y="192" font-size="13">rule for one</text>
+    <text x="50" y="210" font-size="13">cloud-managed resource.</text>
+    <text x="50" y="238" font-size="13">Wins even when the</text>
+    <text x="50" y="256" font-size="13">gateway is ALL_TRAFFIC.</text>
+    <text x="50" y="284" font-size="13">S3 and ADLS stay</text>
+    <text x="50" y="302" font-size="13">on this kind of path</text>
+    <text x="50" y="320" font-size="13">when a rule exists.</text>
+    <text x="50" y="348" font-size="13">The firewall behind</text>
+    <text x="50" y="366" font-size="13">the gateway does not</text>
+    <text x="50" y="384" font-size="13">see this traffic.</text>
+
+    <rect x="252" y="122" width="200" height="292" rx="8" fill="#f8efd4" stroke="#021a40"/>
+    <text x="266" y="148" font-size="15" font-weight="700">2. Backbone</text>
+    <text x="266" y="174" font-size="13">AWS gateway endpoints</text>
+    <text x="266" y="192" font-size="13">for S3 and DynamoDB.</text>
+    <text x="266" y="210" font-size="13">Azure service endpoints.</text>
+    <text x="266" y="238" font-size="13">Stays on the provider</text>
+    <text x="266" y="256" font-size="13">backbone. The gateway</text>
+    <text x="266" y="274" font-size="13">cannot override it.</text>
+    <text x="266" y="302" font-size="13">Azure Blob always</text>
+    <text x="266" y="320" font-size="13">takes this path.</text>
+    <text x="266" y="348" font-size="13">A service-endpoint</text>
+    <text x="266" y="366" font-size="13">suffix, such as Azure</text>
+    <text x="266" y="384" font-size="13">SQL or Key Vault, too.</text>
+
+    <rect x="468" y="122" width="200" height="292" rx="8" fill="#d7f0e6" stroke="#021a40"/>
+    <text x="482" y="148" font-size="15" font-weight="700">3. The gateway</text>
+    <text x="482" y="174" font-size="13">SPECIFIC_DESTINATIONS</text>
+    <text x="482" y="192" font-size="13">sends listed DNS names.</text>
+    <text x="482" y="210" font-size="13">Suffixes match.</text>
+    <text x="482" y="238" font-size="13">ALL_TRAFFIC sends only</text>
+    <text x="482" y="256" font-size="13">what rows 1 and 2</text>
+    <text x="482" y="274" font-size="13">did not take.</text>
+    <text x="482" y="302" font-size="13">Egress allow list is</text>
+    <text x="482" y="320" font-size="13">automatic in the first</text>
+    <text x="482" y="338" font-size="13">mode, and manual in</text>
+    <text x="482" y="356" font-size="13">the second. A deny</text>
+    <text x="482" y="374" font-size="13">policy can still drop it.</text>
+
+    <rect x="684" y="122" width="200" height="292" rx="8" fill="#efe6f8" stroke="#021a40"/>
+    <text x="698" y="148" font-size="15" font-weight="700">4. Default egress</text>
+    <text x="698" y="174" font-size="13">Everything that did</text>
+    <text x="698" y="192" font-size="13">not match a higher row.</text>
+    <text x="698" y="220" font-size="13">SPECIFIC_DESTINATIONS</text>
+    <text x="698" y="238" font-size="13">leaves this path in</text>
+    <text x="698" y="256" font-size="13">place for other names.</text>
+    <text x="698" y="284" font-size="13">That is why the docs</text>
+    <text x="698" y="302" font-size="13">recommend it when</text>
+    <text x="698" y="320" font-size="13">the goal is a few</text>
+    <text x="698" y="338" font-size="13">private names, not a</text>
+    <text x="698" y="356" font-size="13">new egress design.</text>
+
+    <rect x="36" y="434" width="848" height="178" rx="8" fill="#ffffff" stroke="#021a40"/>
+    <text x="56" y="460" font-size="16" font-weight="700">What I would write next to the diagram</text>
+    <text x="56" y="484" font-size="13">Azure, 14 October: Public Preview, Premium, twenty-five named regions. Billing on or after 1 December 2026, no unit printed.</text>
+    <text x="56" y="504" font-size="13">AWS configure page, 13 October: Private Preview, Enterprise, one subnet in one zone, REST API only. Not billed during preview.</text>
+    <text x="56" y="524" font-size="13">3 September Azure notes still say Beta. October product notes do not list the gateway. Google Cloud docs at the same path return 404.</text>
+    <text x="56" y="544" font-size="13">An NCC holds two gateways. A gateway holds 100 DNS names and two resolvers. FAILED is delete and create again.</text>
+    <text x="56" y="564" font-size="13">The subnet is dedicated. A customer quote about reusing a workspace subnet does not override the configure page.</text>
+    <text x="56" y="584" font-size="13">Supported scope in the limitations: serverless runtime products and AI services. The blog's longer list is not that sentence.</text>
+  </g>
+</svg>
