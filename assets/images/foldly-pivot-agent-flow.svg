@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 760" role="img" aria-labelledby="foldlyTitle foldlyDesc">
+  <title id="foldlyTitle">From a merged marketplace to an unshipped Foldly draft</title>
+  <desc id="foldlyDesc">On 15 October 2026 a static prompt marketplace was built and merged. On 16 October the idea was dropped. An architect supervising Crew73 ran three brainstorm rounds. Origami paint-and-fold was chosen, and a draft pull request replaced the marketplace contents in the same repository. QA Critic, using Playwright, said not to ship. The draft is not merged. A person decides the idea, the repository, and the merge.</desc>
+  <rect width="920" height="760" fill="#f4f7fb"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#102033">
+    <rect x="36" y="24" width="848" height="78" rx="8" fill="#e7eef8" stroke="#021a40"/>
+    <text x="56" y="50" font-size="16" font-weight="700">One architect. Six agents. A human at the idea, the repo, and the merge.</text>
+    <text x="56" y="72" font-size="13">15-16 October 2026. GitHub Pages, vanilla HTML, CSS, and JavaScript. No server, no database.</text>
+    <text x="56" y="90" font-size="13">Crew73 proposes. I pick the niche, I pick the repository, and I have not accepted the Foldly merge.</text>
+
+    <rect x="36" y="118" width="270" height="168" rx="8" fill="#f8efd4" stroke="#021a40"/>
+    <text x="50" y="144" font-size="15" font-weight="700">15 Oct. Marketplace</text>
+    <text x="50" y="168" font-size="13">Pull request #1. Ten prompts.</text>
+    <text x="50" y="186" font-size="13">Liquid writes a JSON index.</text>
+    <text x="50" y="204" font-size="13">Filters live in the query string.</text>
+    <text x="50" y="222" font-size="13">Add opens a prefilled GitHub URL.</text>
+    <text x="50" y="240" font-size="13">jekyll build --safe passed.</text>
+    <text x="50" y="264" font-size="13">Merged. Pages is serving it.</text>
+
+    <rect x="322" y="118" width="270" height="168" rx="8" fill="#efe6f8" stroke="#021a40"/>
+    <text x="336" y="144" font-size="15" font-weight="700">16 Oct. Four directions</text>
+    <text x="336" y="168" font-size="13">The idea had no reason to visit.</text>
+    <text x="336" y="192" font-size="13">Before-and-after gallery.</text>
+    <text x="336" y="210" font-size="13">Daily challenge.</text>
+    <text x="336" y="228" font-size="13">Niche library.</text>
+    <text x="336" y="246" font-size="13">Template playground.</text>
+    <text x="336" y="264" font-size="13">Then a crew, under one architect.</text>
+
+    <rect x="608" y="118" width="276" height="168" rx="8" fill="#e7eef8" stroke="#021a40"/>
+    <text x="622" y="144" font-size="15" font-weight="700">Crew73</text>
+    <text x="622" y="168" font-size="13">Trend Scout.</text>
+    <text x="622" y="186" font-size="13">Growth Strategist.</text>
+    <text x="622" y="204" font-size="13">Product Designer.</text>
+    <text x="622" y="222" font-size="13">Builder. Content Creator.</text>
+    <text x="622" y="240" font-size="13">QA Critic, adversarial.</text>
+    <text x="622" y="264" font-size="13">They report. They do not merge.</text>
+
+    <rect x="36" y="302" width="270" height="176" rx="8" fill="#ffffff" stroke="#021a40"/>
+    <text x="50" y="328" font-size="15" font-weight="700">Round 1. Dropped</text>
+    <text x="50" y="352" font-size="13">Schemadle, a daily</text>
+    <text x="50" y="370" font-size="13">data-engineering puzzle.</text>
+    <text x="50" y="388" font-size="13">A Stephen King puzzle.</text>
+    <text x="50" y="406" font-size="13">A Lakehouse playground.</text>
+    <text x="50" y="424" font-size="13">A quiz.</text>
+    <text x="50" y="454" font-size="13">Drop the first two. Go niche.</text>
+
+    <rect x="322" y="302" width="270" height="176" rx="8" fill="#ffffff" stroke="#021a40"/>
+    <text x="336" y="328" font-size="15" font-weight="700">Round 2. Think more</text>
+    <text x="336" y="352" font-size="13">India-focused niches.</text>
+    <text x="336" y="376" font-size="13">An RTO-code map game.</text>
+    <text x="336" y="394" font-size="13">A lost-unit converter.</text>
+    <text x="336" y="412" font-size="13">Ham radio exam practice.</text>
+    <text x="336" y="454" font-size="13">I asked for another pass.</text>
+
+    <rect x="608" y="302" width="276" height="176" rx="8" fill="#d7f0e6" stroke="#021a40"/>
+    <text x="622" y="328" font-size="15" font-weight="700">Round 3. Picked</text>
+    <text x="622" y="352" font-size="13">Global micro-niches</text>
+    <text x="622" y="370" font-size="13">and small "wow" toys.</text>
+    <text x="622" y="394" font-size="13">QA Critic's top pick:</text>
+    <text x="622" y="412" font-size="13">origami paint-and-fold.</text>
+    <text x="622" y="436" font-size="13">I chose it, and I chose</text>
+    <text x="622" y="454" font-size="13">to replace this same repo.</text>
+
+    <rect x="36" y="494" width="424" height="234" rx="8" fill="#d7f0e6" stroke="#021a40"/>
+    <text x="50" y="520" font-size="15" font-weight="700">Foldly. Draft pull request #2</text>
+    <text x="50" y="544" font-size="13">CSS 3D hinge tree. clip-path flaps. Keyframed folds.</text>
+    <text x="50" y="562" font-size="13">No solver. Canvas 2D paint. Deflate share URL.</text>
+    <text x="50" y="580" font-size="13">PNG and WebM by re-rendering to a canvas.</text>
+    <text x="50" y="598" font-size="13">One print and search page per model.</text>
+    <text x="50" y="622" font-size="13">Cup, cat, dog, tulip, samurai helmet, frog.</text>
+    <text x="50" y="640" font-size="13">Fortune hat renamed to kabuto. Estimates labelled.</text>
+    <text x="50" y="664" font-size="13">6,123 additions, 60 files. jekyll build passed.</text>
+    <text x="50" y="688" font-size="13">Draft. Not merged. Pages still serves #1.</text>
+    <text x="50" y="706" font-size="13">A merge would replace the live marketplace.</text>
+
+    <rect x="476" y="494" width="408" height="234" rx="8" fill="#f8d6d4" stroke="#021a40"/>
+    <text x="490" y="520" font-size="15" font-weight="700">QA Critic. Do not ship.</text>
+    <text x="490" y="544" font-size="13">Playwright: Chromium, WebKit, iPhone 13, Pixel 7.</text>
+    <text x="490" y="568" font-size="13">WebKit never paints the front faces.</text>
+    <text x="490" y="586" font-size="13">clip-path inside preserve-3d drops them.</text>
+    <text x="490" y="610" font-size="13">display CSS overrides [hidden]. Phones overflow.</text>
+    <text x="490" y="628" font-size="13">TBD placeholder text is still on the page.</text>
+    <text x="490" y="652" font-size="13">First folds move the front layer only.</text>
+    <text x="490" y="670" font-size="13">Cup is a wedge. Cat and helmet are triangles.</text>
+    <text x="490" y="688" font-size="13">Frog is hidden by fake cut strips.</text>
+    <text x="490" y="706" font-size="13">Fixes in progress. The draft stays open.</text>
+  </g>
+</svg>
