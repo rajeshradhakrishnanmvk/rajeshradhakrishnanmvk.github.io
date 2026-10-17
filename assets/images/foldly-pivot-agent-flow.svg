@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 780" role="img" aria-labelledby="foldlyTitle foldlyDesc">
+  <title id="foldlyTitle">From a merged marketplace to four shipped Foldly models</title>
+  <desc id="foldlyDesc">Pull request 1 merged on 15 October 2026 even though the architect notes said it never merged. On 16 October the marketplace idea was dropped and origami was chosen. The first Foldly draft had six models and QA said not to ship. Five later commits dropped the frog and the samurai helmet, drew the fold on a canvas for WebKit, fitted the fold in the frame, and limited share links to about 1800 characters. Pull request 2 was squash-merged on 17 October 2026. The live site has the paper cup, cat, dog, and tulip.</desc>
+  <rect width="920" height="780" fill="#f4f7fb"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#102033">
+    <rect x="36" y="24" width="848" height="78" rx="8" fill="#e7eef8" stroke="#021a40"/>
+    <text x="56" y="50" font-size="16" font-weight="700">Notes said pull request #1 never merged. GitHub shows that it did.</text>
+    <text x="56" y="72" font-size="13">15-17 October 2026. GitHub Pages, vanilla HTML, CSS, and JavaScript. No server, no database.</text>
+    <text x="56" y="90" font-size="13">Foldly merged the morning of the 17th. Four models are on the project site. Frog and helmet are not.</text>
+
+    <rect x="36" y="118" width="270" height="168" rx="8" fill="#f8efd4" stroke="#021a40"/>
+    <text x="50" y="144" font-size="15" font-weight="700">15 Oct. Marketplace</text>
+    <text x="50" y="168" font-size="13">Pull request #1. Ten prompts.</text>
+    <text x="50" y="186" font-size="13">Liquid writes a JSON index.</text>
+    <text x="50" y="204" font-size="13">Filters live in the query string.</text>
+    <text x="50" y="222" font-size="13">jekyll build --safe passed.</text>
+    <text x="50" y="246" font-size="13">Merged 15:03 UTC. Commit</text>
+    <text x="50" y="264" font-size="13">f40b480. Pages built it.</text>
+
+    <rect x="322" y="118" width="270" height="168" rx="8" fill="#efe6f8" stroke="#021a40"/>
+    <text x="336" y="144" font-size="15" font-weight="700">16 Oct. Origami</text>
+    <text x="336" y="168" font-size="13">I still did not want the feed.</text>
+    <text x="336" y="192" font-size="13">Gallery, daily challenge,</text>
+    <text x="336" y="210" font-size="13">niche library, playground.</text>
+    <text x="336" y="234" font-size="13">Crew73 under one architect.</text>
+    <text x="336" y="258" font-size="13">Third round: paint-and-fold.</text>
+
+    <rect x="608" y="118" width="276" height="168" rx="8" fill="#f8d6d4" stroke="#021a40"/>
+    <text x="622" y="144" font-size="15" font-weight="700">First draft. Do not ship.</text>
+    <text x="622" y="168" font-size="13">Commit 6276841. Six models.</text>
+    <text x="622" y="186" font-size="13">Playwright: Chromium, WebKit,</text>
+    <text x="622" y="204" font-size="13">iPhone 13, Pixel 7.</text>
+    <text x="622" y="228" font-size="13">WebKit paint missing.</text>
+    <text x="622" y="246" font-size="13">Front layer only. Cup is a wedge.</text>
+    <text x="622" y="264" font-size="13">Cat and helmet are triangles.</text>
+
+    <rect x="36" y="302" width="424" height="210" rx="8" fill="#ffffff" stroke="#021a40"/>
+    <text x="50" y="328" font-size="15" font-weight="700">Five commits. The last note says round 4.</text>
+    <text x="50" y="354" font-size="13">981dee5. Drop frog and helmet. Match four diagrams.</text>
+    <text x="50" y="376" font-size="13">One hinge per flap cannot make those two.</text>
+    <text x="50" y="404" font-size="13">e46b290. Draw the painted fold on a canvas.</text>
+    <text x="50" y="426" font-size="13">WebKit drops images on CSS 3D planes.</text>
+    <text x="50" y="454" font-size="13">ca0e253. Fit the fold in the frame, margin 0.06.</text>
+    <text x="50" y="476" font-size="13">78fb686. Refuse a share link over 1,800 characters.</text>
+    <text x="50" y="498" font-size="13">That pass is titled QA round 4 in the pull request.</text>
+
+    <rect x="476" y="302" width="408" height="210" rx="8" fill="#d7f0e6" stroke="#021a40"/>
+    <text x="490" y="328" font-size="15" font-weight="700">17 Oct. Merged. Four models live.</text>
+    <text x="490" y="354" font-size="13">Squash e570ce5 at 02:01 UTC.</text>
+    <text x="490" y="376" font-size="13">Merged by my account. Pages built it.</text>
+    <text x="490" y="404" font-size="13">Paper cup, cat face, dog face, tulip.</text>
+    <text x="490" y="426" font-size="13">Each of those URLs returned 200.</text>
+    <text x="490" y="454" font-size="13">Frog and samurai helmet returned 404.</text>
+    <text x="490" y="476" font-size="13">Difficulty and time are labeled estimates.</text>
+    <text x="490" y="498" font-size="13">The pull request text still says not merged.</text>
+
+    <rect x="36" y="528" width="848" height="220" rx="8" fill="#e7eef8" stroke="#021a40"/>
+    <text x="56" y="558" font-size="16" font-weight="700">What I would keep next to the diagram</text>
+    <text x="56" y="586" font-size="13">The marketplace merge is a GitHub fact. The architect note that it never merged is a different sentence.</text>
+    <text x="56" y="610" font-size="13">Do not ship was the right call on the six-model draft. The cup was a wedge. The helmet was a triangle.</text>
+    <text x="56" y="634" font-size="13">The ship is a smaller list. Two models that one hinge per flap cannot make are out of the tree.</text>
+    <text x="56" y="658" font-size="13">The texture fix is a canvas, shared by both browsers. The frame fix is a 0.06 margin.</text>
+    <text x="56" y="682" font-size="13">A share link over 1,800 characters is refused, and the sheet offers a picture or a video.</text>
+    <text x="56" y="706" font-size="13">No traffic number belongs on this picture. The choice of origami was a gate, and the merge was the next one.</text>
+    <text x="56" y="730" font-size="13">Live path: rajeshradhakrishnanmvk.github.io/prompt-marketplace/</text>
+  </g>
+</svg>
