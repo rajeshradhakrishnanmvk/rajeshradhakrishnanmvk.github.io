@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 640" role="img" aria-labelledby="txnTitle txnDesc">
+  <title id="txnTitle">One catalog commit, two labels</title>
+  <desc id="txnDesc">A multi-statement transaction commits through Unity Catalog as one Delta log entry. The 16 October 2026 blog calls Delta and Iceberg generally available. The 22 July release notes and the 30 September docs mark Iceberg writes as Private Preview. Non-interactive mode can detect conflicts per row when row-level concurrency is enabled. Interactive mode detects conflicts per table and runs only on a SQL warehouse.</desc>
+  <rect width="920" height="640" fill="#f4f7fb"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#102033">
+    <rect x="36" y="24" width="848" height="78" rx="8" fill="#e7eef8" stroke="#021a40"/>
+    <text x="56" y="50" font-size="16" font-weight="700">The catalog holds the boundary. The label is still two sentences.</text>
+    <text x="56" y="72" font-size="13">16 October blog: generally available on Delta Lake and Iceberg. No performance number is printed.</text>
+    <text x="56" y="90" font-size="13">22 July notes, and the docs last updated 30 September: Delta writes are GA. Iceberg writes stay Private Preview.</text>
+
+    <rect x="36" y="122" width="410" height="250" rx="8" fill="#d7f0e6" stroke="#021a40"/>
+    <text x="52" y="148" font-size="15" font-weight="700">Non-interactive</text>
+    <text x="52" y="174" font-size="13">BEGIN ATOMIC ... END</text>
+    <text x="52" y="196" font-size="13">Commit and rollback are automatic.</text>
+    <text x="52" y="218" font-size="13">SQL warehouse, serverless, or Runtime 18.0.</text>
+    <text x="52" y="240" font-size="13">Row conflicts only if the target already</text>
+    <text x="52" y="258" font-size="13">has row-level concurrency: Runtime 14.3,</text>
+    <text x="52" y="276" font-size="13">no partitions, deletion vectors on.</text>
+    <text x="52" y="298" font-size="13">A partitioned table stays at the file.</text>
+    <text x="52" y="320" font-size="13">MERGE on GovCloud or a dedicated cluster</text>
+    <text x="52" y="338" font-size="13">does not get the row check.</text>
+
+    <rect x="466" y="122" width="418" height="250" rx="8" fill="#f8efd4" stroke="#021a40"/>
+    <text x="482" y="148" font-size="15" font-weight="700">Interactive</text>
+    <text x="482" y="174" font-size="13">BEGIN TRANSACTION ... COMMIT</text>
+    <text x="482" y="196" font-size="13">SQL warehouse only. A person or a driver</text>
+    <text x="482" y="214" font-size="13">decides. Uncommitted rows stay in-session.</text>
+    <text x="482" y="236" font-size="13">Conflicts are at the table, except an</text>
+    <text x="482" y="254" font-size="13">insert that does not read the target.</text>
+    <text x="482" y="276" font-size="13">Ten idle minutes, then ROLLBACK to clear</text>
+    <text x="482" y="294" font-size="13">the session. JDBC 3.0.5, ODBC 2.10.0.</text>
+    <text x="482" y="316" font-size="13">CALL, catalog metadata, and a timezone</text>
+    <text x="482" y="334" font-size="13">change are refused inside the session.</text>
+
+    <rect x="36" y="392" width="848" height="220" rx="8" fill="#ffffff" stroke="#021a40"/>
+    <text x="56" y="418" font-size="16" font-weight="700">What one successful block writes down</text>
+    <text x="56" y="442" font-size="13">catalogManaged on every table the block writes. One Delta log entry per table. Statements kept as JSON on that entry.</text>
+    <text x="56" y="464" font-size="13">DML only. CREATE, ALTER, and DROP stay outside. A temporary table is created before BEGIN.</text>
+    <text x="56" y="486" font-size="13">100 tables, 100 views, 100 intermediate commits. 48 hours. Lineage remains after rollback.</text>
+    <text x="56" y="508" font-size="13">A streaming table can be a sink. A Structured Streaming checkpoint does not advance with the SQL commit.</text>
+    <text x="56" y="530" font-size="13">External files need allow_nontransactional_read and are not repeatable. A path read fails with PATH_BASED_ACCESS.</text>
+    <text x="56" y="552" font-size="13">Lakebase is a different commit: Postgres WAL and safekeepers. This diagram does not include it.</text>
+    <text x="56" y="574" font-size="13">October product notes through 19 October do not retire the Iceberg preview banner.</text>
+  </g>
+</svg>
