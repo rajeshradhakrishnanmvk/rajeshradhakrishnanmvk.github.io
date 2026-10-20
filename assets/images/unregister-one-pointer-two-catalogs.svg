@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 640" role="img" aria-labelledby="unregTitle unregDesc">
+  <title id="unregTitle">One metadata pointer, two catalogs</title>
+  <desc id="unregDesc">UNREGISTER on catalog A returns the latest metadata location and leaves the files in the bucket. REGISTER on catalog B attaches that pointer. The 19 October 2026 Databricks post calls this Private Preview. The October product notes do not list it. DROP is a different door: a managed table is marked for deletion and can be restored with UNDROP inside a recovery window.</desc>
+  <rect width="920" height="640" fill="#f4f7fb"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#102033">
+    <rect x="36" y="24" width="848" height="78" rx="8" fill="#e7eef8" stroke="#021a40"/>
+    <text x="56" y="50" font-size="16" font-weight="700">The files stay. The managing catalog changes.</text>
+    <text x="56" y="72" font-size="13">19 October blog: REGISTER and UNREGISTER are Private Preview. Ask the account team.</text>
+    <text x="56" y="90" font-size="13">October notes through 19 October, and the managed-tables page updated 8 October, do not name the calls.</text>
+
+    <rect x="36" y="122" width="250" height="248" rx="8" fill="#f8efd4" stroke="#021a40"/>
+    <text x="52" y="148" font-size="15" font-weight="700">Catalog A</text>
+    <text x="52" y="174" font-size="13">Empty POST .../unregister</text>
+    <text x="52" y="196" font-size="13">The name is removed.</text>
+    <text x="52" y="218" font-size="13">Files and metadata stay.</text>
+    <text x="52" y="240" font-size="13">Response includes every</text>
+    <text x="52" y="258" font-size="13">commit from before the call.</text>
+    <text x="52" y="280" font-size="13">A later commit on A must fail.</text>
+    <text x="52" y="302" font-size="13">Idempotency-Key is optional.</text>
+    <text x="52" y="324" font-size="13">This is not DROP.</text>
+    <text x="52" y="346" font-size="13">Spec merged 26 May 2026.</text>
+
+    <rect x="310" y="122" width="300" height="248" rx="8" fill="#ffffff" stroke="#021a40"/>
+    <text x="326" y="148" font-size="15" font-weight="700">metadata-location</text>
+    <text x="326" y="174" font-size="13">The pointer the next catalog</text>
+    <text x="326" y="192" font-size="13">needs. No file is copied.</text>
+    <text x="326" y="218" font-size="13">The bucket has to be one</text>
+    <text x="326" y="236" font-size="13">catalog B can read.</text>
+    <text x="326" y="262" font-size="13">9 October guide: do not grant</text>
+    <text x="326" y="280" font-size="13">storage-level access, and</text>
+    <text x="326" y="298" font-size="13">Databricks-owned storage is</text>
+    <text x="326" y="316" font-size="13">still optional for a catalog.</text>
+    <text x="326" y="342" font-size="13">The posts do not name the</text>
+    <text x="326" y="360" font-size="13">privilege or the bucket grant.</text>
+
+    <rect x="634" y="122" width="250" height="248" rx="8" fill="#d7f0e6" stroke="#021a40"/>
+    <text x="650" y="148" font-size="15" font-weight="700">Catalog B</text>
+    <text x="650" y="174" font-size="13">POST .../register</text>
+    <text x="650" y="196" font-size="13">Body: name and the pointer.</text>
+    <text x="650" y="218" font-size="13">overwrite defaults to false.</text>
+    <text x="650" y="240" font-size="13">One record links the name</text>
+    <text x="650" y="258" font-size="13">to the existing metadata.</text>
+    <text x="650" y="280" font-size="13">B is then the only catalog</text>
+    <text x="650" y="298" font-size="13">that should accept commits.</text>
+    <text x="650" y="324" font-size="13">Registering while A still</text>
+    <text x="650" y="342" font-size="13">owns the table forks it.</text>
+
+    <rect x="36" y="390" width="848" height="220" rx="8" fill="#ffffff" stroke="#021a40"/>
+    <text x="56" y="416" font-size="16" font-weight="700">Two doors that are not this handoff</text>
+    <text x="56" y="442" font-size="13">DROP on a managed table marks files for deletion. UNDROP default is 7 days. 30 days is the Public Preview ceiling, not the default.</text>
+    <text x="56" y="464" font-size="13">The 11 September summary table still says an 8-day retention. The 19 October post says up to 30 days and prints no default.</text>
+    <text x="56" y="486" font-size="13">SET MANAGED, on the 11 September convert page, copies a Delta table into the managed location. Iceberg is not in that list.</text>
+    <text x="56" y="508" font-size="13">SET MANAGED IN PLACE, with no data movement, is a roadmap sentence on the 19 October post. The FAQ on that page already says SET MANAGED.</text>
+    <text x="56" y="530" font-size="13">Stop writers and repoint jobs before the pair. The 5 October post deferred those steps. 19 October did not write them.</text>
+    <text x="56" y="552" font-size="13">If REGISTER fails after UNREGISTER, the name is on neither catalog. The files are still in the bucket. No compensating call is specified.</text>
+    <text x="56" y="574" font-size="13">Foreign Iceberg stays read-only until REGISTER. That call is the private preview, not a line in the October notes.</text>
+  </g>
+</svg>
