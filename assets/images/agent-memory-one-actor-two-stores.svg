@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 640" role="img" aria-labelledby="memTitle memDesc">
+  <title id="memTitle">One actor, two Lakebase stores</title>
+  <desc id="memDesc">A session store holds one conversation as opaque items. A memory store holds durable facts keyed by actor, path, and an optional session. The agent can write memory immediately. A memory pipeline distills sessions later and can rewrite those entries. The actor partitions rows. The store grant is the access boundary. Search is described four different ways across the October pages.</desc>
+  <rect width="920" height="640" fill="#f4f7fb"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#102033">
+    <rect x="36" y="24" width="848" height="78" rx="8" fill="#e7eef8" stroke="#021a40"/>
+    <text x="56" y="50" font-size="16" font-weight="700">Beta on the pages. The 20 October notes do not mention it.</text>
+    <text x="56" y="72" font-size="13">12 October notes: memory pipelines are Beta. Pages last updated 17 October: stores and pipelines are Beta.</text>
+    <text x="56" y="90" font-size="13">20 October posts: Beta today, on Lakebase. 20 October notes: three connectors. No memory bullet.</text>
+
+    <rect x="36" y="122" width="410" height="248" rx="8" fill="#d7f0e6" stroke="#021a40"/>
+    <text x="52" y="148" font-size="15" font-weight="700">Session store. Episodic.</text>
+    <text x="52" y="174" font-size="13">One interaction. Opaque JSON items.</text>
+    <text x="52" y="196" font-size="13">actor_id from trusted code. session_id</text>
+    <text x="52" y="214" font-size="13">optional. Pop, clear, and a fork are allowed.</text>
+    <text x="52" y="236" font-size="13">Append is immutable. Pop and clear exist.</text>
+    <text x="52" y="258" font-size="13">list_items is newest first unless asked.</text>
+    <text x="52" y="280" font-size="13">Delete removes children, not memory.</text>
+    <text x="52" y="302" font-size="13">Lakebase, billed in preview. No extra</text>
+    <text x="52" y="320" font-size="13">feature charge. The price can change.</text>
+    <text x="52" y="342" font-size="13">agentbricks dev keeps this in-process.</text>
+
+    <rect x="466" y="122" width="418" height="248" rx="8" fill="#f8efd4" stroke="#021a40"/>
+    <text x="482" y="148" font-size="15" font-weight="700">Memory store. Derived.</text>
+    <text x="482" y="174" font-size="13">actor_id + path + optional session_id.</text>
+    <text x="482" y="196" font-size="13">Same path, two sessions: two entries.</text>
+    <text x="482" y="218" font-size="13">add() fails if the path exists. put()</text>
+    <text x="482" y="236" font-size="13">replaces, and it is not atomic.</text>
+    <text x="482" y="258" font-size="13">Search, four sentences: hybrid; semantic;</text>
+    <text x="482" y="276" font-size="13">BM25 plus semantic, max 100, no pages;</text>
+    <text x="482" y="294" font-size="13">BM25, and not vector similarity.</text>
+    <text x="482" y="316" font-size="13">Any principal on the store reads every actor.</text>
+    <text x="482" y="338" font-size="13">Workspace users can list store ids.</text>
+
+    <rect x="36" y="390" width="848" height="222" rx="8" fill="#ffffff" stroke="#021a40"/>
+    <text x="56" y="416" font-size="16" font-weight="700">The third writer is late, and it can delete</text>
+    <text x="56" y="442" font-size="13">A memory pipeline is not Lakeflow. One session store, one memory store. A second pair fails with ALREADY_EXISTS.</text>
+    <text x="56" y="464" font-size="13">On demand, or about every 24 hours. No cron. Unity Gateway model. Default if you omit it.</text>
+    <text x="56" y="486" font-size="13">Maintenance rewrites, merges, splits, or deletes entries the agent saved, for actors who have sessions.</text>
+    <text x="56" y="508" font-size="13">Checkpoint per actor. A new pipeline rereads full history. About 1,200 UUID actors, or 48 KiB of ids.</text>
+    <text x="56" y="530" font-size="13">Pipeline meter: serverless general compute, plus Foundation Model Serving. Separate from Lakebase.</text>
+    <text x="56" y="552" font-size="13">Legacy door: Unity Catalog, /api/2.1, paths under /memories/. The API page says it will be turned down soon.</text>
+    <text x="56" y="574" font-size="13">New door: /api/2.0/agents/memory-stores. The actor partitions. The store grant is the lock.</text>
+  </g>
+</svg>
