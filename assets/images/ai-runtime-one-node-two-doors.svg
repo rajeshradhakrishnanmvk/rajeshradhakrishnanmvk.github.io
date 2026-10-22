@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 700" role="img" aria-labelledby="airTitle airDesc">
+  <title id="airTitle">One node, two doors into AI Runtime</title>
+  <desc id="airDesc">An accelerator type provisions one node. The notebook door runs the Beta distributed decorator on that node for up to two days. The CLI door counts total GPUs, so sixteen H100s are two nodes, and a CLI job can run for fourteen days. The 21 October blogs say generally available. The October notes have no such line.</desc>
+  <rect width="920" height="700" fill="#f4f7fb"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#102033">
+    <rect x="36" y="24" width="848" height="96" rx="8" fill="#e7eef8" stroke="#021a40"/>
+    <text x="56" y="50" font-size="16" font-weight="700">21 October blogs: generally available. The October notes do not say it.</text>
+    <text x="56" y="72" font-size="13">19 March notes: single-node Public Preview. Multi-GPU API remains Beta.</text>
+    <text x="56" y="92" font-size="13">Azure "What's coming", read 22 October: still scheduled for 15 October without the</text>
+    <text x="56" y="110" font-size="13">compliance profile, and mid-November by default for eligible compliance workspaces.</text>
+
+    <rect x="36" y="140" width="848" height="78" rx="8" fill="#ffffff" stroke="#021a40"/>
+    <text x="56" y="166" font-size="15" font-weight="700">The SKU is one node. 8xB300 is a waitlist on the AWS overview.</text>
+    <text x="56" y="188" font-size="13">1xA10, 24 GB. 1xH100, 80 GB. 8xH100, 80 GB each. 8xB300, 288 GB each, Public Preview.</text>
+    <text x="56" y="206" font-size="13">Azure overview: A10 and H100. The train-model page names A10, then says nodes.</text>
+
+    <rect x="36" y="238" width="410" height="230" rx="8" fill="#d7f0e6" stroke="#021a40"/>
+    <text x="52" y="264" font-size="15" font-weight="700">Notebook door. One node.</text>
+    <text x="52" y="290" font-size="13">Serverless GPU. Quickstart starts on 1xA10.</text>
+    <text x="52" y="312" font-size="13">@distributed is Beta on the 20 October page.</text>
+    <text x="52" y="334" font-size="13">num_accelerators means fewer GPUs here.</text>
+    <text x="52" y="356" font-size="13">Default timeout 3 hours. Closing the</text>
+    <text x="52" y="374" font-size="13">notebook ends the run.</text>
+    <text x="52" y="396" font-size="13">Session and notebook job: up to 2 days.</text>
+    <text x="52" y="418" font-size="13">Connect attempt ends at 15 minutes.</text>
+    <text x="52" y="444" font-size="13">TorchDistributor stays if Spark is required.</text>
+
+    <rect x="466" y="238" width="418" height="230" rx="8" fill="#f8efd4" stroke="#021a40"/>
+    <text x="482" y="264" font-size="15" font-weight="700">CLI door. Total GPU count.</text>
+    <text x="482" y="290" font-size="13">GPU_8xH100 and 16 accelerators: 2 nodes.</text>
+    <text x="482" y="312" font-size="13">The total must be a multiple of 8.</text>
+    <text x="482" y="334" font-size="13">Command once per node. torchrun launches.</text>
+    <text x="482" y="356" font-size="13">CLI page: NODE_RANK. Bundle page: WORLD_SIZE.</text>
+    <text x="482" y="378" font-size="13">Bundle field: accelerator_count.</text>
+    <text x="482" y="400" font-size="13">CLI job: up to 14 days. Checkpoint on a volume.</text>
+    <text x="482" y="422" font-size="13">Connect attempt ends at 24 hours.</text>
+    <text x="482" y="444" font-size="13">No maximum node count on the Slurm guide.</text>
+
+    <rect x="36" y="488" width="848" height="186" rx="8" fill="#ffffff" stroke="#021a40"/>
+    <text x="56" y="514" font-size="16" font-weight="700">The 20 October pages do not share a timeout, or a Geo</text>
+    <text x="56" y="540" font-size="13">YAML reference: timeout_minutes covers the whole run, retries included. Default max_retries is 3.</text>
+    <text x="56" y="562" font-size="13">Slurm guide: timeout_minutes limits each attempt, and a retry starts the command again.</text>
+    <text x="56" y="584" font-size="13">AWS India, Europe, Asia, Australia and New Zealand: some GPU types run in the Americas Geo.</text>
+    <text x="56" y="606" font-size="13">Data stays in the workspace Geo. Compliance profile: enable AI Runtime and multi-node H100 previews.</text>
+    <text x="56" y="628" font-size="13">FedRAMP High and DoD IL5 unsupported. Meter: system.billing.usage, serverless_gpu, ai_runtime_workload_id.</text>
+    <text x="56" y="650" font-size="13">Environment version 6 for databricks.air. The Slurm example still shows version 4.</text>
+  </g>
+</svg>
