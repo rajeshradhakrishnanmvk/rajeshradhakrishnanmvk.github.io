@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 720" role="img" aria-labelledby="cacheTitle cacheDesc">
+  <title id="cacheTitle">One lineage, one snapshot on serverless DataFrame cache</title>
+  <desc id="cacheDesc">df.cache materializes a session snapshot. DataFrames derived from that variable read it. A new DataFrame with the same plan reads the source tables. The 23 October notes call this Public Preview. The Azure limitations page still says the call raises.</desc>
+  <rect width="920" height="720" fill="#f4f7fb"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#102033">
+    <rect x="36" y="24" width="848" height="96" rx="8" fill="#e7eef8" stroke="#021a40"/>
+    <text x="56" y="50" font-size="16" font-weight="700">23 October notes: Public Preview. Azure limitations still say the call raises.</text>
+    <text x="56" y="72" font-size="13">AWS, Azure, and Google Cloud product notes, and the serverless notes on each cloud.</text>
+    <text x="56" y="92" font-size="13">Feature pages last updated 22 October. AWS and Google Cloud October headers still say 1 October.</text>
+    <text x="56" y="110" font-size="13">On by default. Off for the compliance security profile. An admin can disable it on Previews.</text>
+
+    <rect x="36" y="140" width="410" height="248" rx="8" fill="#d7f0e6" stroke="#021a40"/>
+    <text x="52" y="166" font-size="15" font-weight="700">The variable you cached</text>
+    <text x="52" y="192" font-size="13">cache() runs the query before it returns.</text>
+    <text x="52" y="214" font-size="13">The snapshot sits in cloud storage.</text>
+    <text x="52" y="236" font-size="13">persist(storageLevel) ignores the level.</text>
+    <text x="52" y="258" font-size="13">storageLevel reports DISK_ONLY.</text>
+    <text x="52" y="280" font-size="13">filter, select, groupBy, join derived</text>
+    <text x="52" y="302" font-size="13">from this variable read the snapshot.</text>
+    <text x="52" y="324" font-size="13">A second cache() on it does nothing.</text>
+    <text x="52" y="346" font-size="13">Later writes and masks do not reach it.</text>
+    <text x="52" y="368" font-size="13">Session only. At most seven days.</text>
+
+    <rect x="466" y="140" width="418" height="248" rx="8" fill="#f8efd4" stroke="#021a40"/>
+    <text x="482" y="166" font-size="15" font-weight="700">Same plan, new variable</text>
+    <text x="482" y="192" font-size="13">A rebuilt join reads the source tables.</text>
+    <text x="482" y="214" font-size="13">Classic matching used plan shape.</text>
+    <text x="482" y="236" font-size="13">Classic materialization was lazy.</text>
+    <text x="482" y="258" font-size="13">Classic cache was shared on the cluster.</text>
+    <text x="482" y="280" font-size="13">PySpark reference still opens with</text>
+    <text x="482" y="302" font-size="13">MEMORY_AND_DISK_DESER, and the example</text>
+    <text x="482" y="324" font-size="13">still prints InMemoryTableScan.</text>
+    <text x="482" y="346" font-size="13">SQL CACHE TABLE and catalog cache</text>
+    <text x="482" y="368" font-size="13">methods still raise on serverless.</text>
+
+    <rect x="36" y="408" width="848" height="286" rx="8" fill="#ffffff" stroke="#021a40"/>
+    <text x="56" y="434" font-size="16" font-weight="700">unpersist destroys the lineage. The pages do not share a status.</text>
+    <text x="56" y="460" font-size="13">unpersist ignores blocking, returns immediately, and raises CACHE_DATAFRAME_ACCESS_AFTER_UNCACHE.</text>
+    <text x="56" y="482" font-size="13">A child you cached first keeps its own snapshot. unpersist is not a refresh.</text>
+    <text x="56" y="504" font-size="13">After seven days the lifecycle section says start a new session. CACHE_ENTRY_RESOLUTION_FAILED says call cache() again.</text>
+    <text x="56" y="526" font-size="13">AWS and Google Cloud limitations, 22 October: cache, persist, and unpersist are supported.</text>
+    <text x="56" y="548" font-size="13">Azure limitations, read 23 October: those DataFrame cache APIs are not supported.</text>
+    <text x="56" y="570" font-size="13">AWS migration, 22 October: the calls mostly move unchanged, and the agent still treats them as a hard blocker.</text>
+    <text x="56" y="592" font-size="13">Azure migration, read 23 October: remove the calls. AWS GovCloud, GovCloud DoD, and Azure Government are excluded.</text>
+    <text x="56" y="614" font-size="13">The Google Cloud cache page has no government line. Environment v5. Connect Python 18.1.8. Connect Scala 18.1.5.</text>
+    <text x="56" y="636" font-size="13">Serverless workspace: default storage, and a managed-services customer-managed key when one is set.</text>
+    <text x="56" y="658" font-size="13">Classic workspace: the bucket from workspace creation. Azure names a storage account. No meter on these pages.</text>
+    <text x="56" y="680" font-size="13">Alias sum(amount) before you cache it. The Spark ML 1 GB model cache is a different limit.</text>
+  </g>
+</svg>
