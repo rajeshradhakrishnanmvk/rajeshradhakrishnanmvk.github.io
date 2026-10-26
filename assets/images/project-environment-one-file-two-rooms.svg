@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 760" role="img" aria-labelledby="fileTitle fileDesc">
+  <title id="fileTitle">One file, two rooms for a Databricks project environment</title>
+  <desc id="fileDesc">Notebooks in a bundle share one serverless process in the editor. A scheduled job reads the same pyproject.toml through project_environment and runs each task in an isolated environment. The 22 October notes call both Betas. The Jobs API reference does not list the field.</desc>
+  <rect width="920" height="760" fill="#f4f7fb"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#102033">
+    <rect x="36" y="24" width="848" height="118" rx="8" fill="#e7eef8" stroke="#021a40"/>
+    <text x="56" y="50" font-size="16" font-weight="700">22 October notes: Beta. Off until an admin enables the preview.</text>
+    <text x="56" y="74" font-size="13">Project-Scoped Shared Compute. AWS, Azure, and Google Cloud product notes.</text>
+    <text x="56" y="96" font-size="13">One switch covers the bundle editor and the job file. It is not on by default.</text>
+    <text x="56" y="118" font-size="13">Git Folders were already Beta on 2 September. That note does not mention the switch.</text>
+    <text x="56" y="140" font-size="13" fill="#102033">AWS and Google Cloud October headers still say 1 October. Serverless notes skip the line.</text>
+
+    <rect x="36" y="162" width="410" height="292" rx="8" fill="#d7f0e6" stroke="#021a40"/>
+    <text x="52" y="188" font-size="15" font-weight="700">Editor room: one process</text>
+    <text x="52" y="214" font-size="13">Notebooks and files in one bundle, or one</text>
+    <text x="52" y="236" font-size="13">Git folder, share serverless compute.</text>
+    <text x="52" y="258" font-size="13">Root pyproject.toml is optional.</text>
+    <text x="52" y="280" font-size="13">When present, it replaces the side pane.</text>
+    <text x="52" y="302" font-size="13">Editor example pins environment version 5.</text>
+    <text x="52" y="324" font-size="13">%uv add updates the file, the lock, and</text>
+    <text x="52" y="346" font-size="13">the environment. A direct edit needs sync.</text>
+    <text x="52" y="368" font-size="13">Python names stay inside one notebook.</text>
+    <text x="52" y="390" font-size="13">The first user to attach owns the run.</text>
+    <text x="52" y="412" font-size="13">A second usage policy gets a second process.</text>
+    <text x="52" y="434" font-size="13">A web terminal sits on the same resource.</text>
+
+    <rect x="466" y="162" width="418" height="292" rx="8" fill="#f8efd4" stroke="#021a40"/>
+    <text x="482" y="188" font-size="15" font-weight="700">Job room: the file only</text>
+    <text x="482" y="214" font-size="13">Schedule copies the root file into the job</text>
+    <text x="482" y="236" font-size="13">when the file exists. The process stays.</text>
+    <text x="482" y="258" font-size="13">project_environment is the only source</text>
+    <text x="482" y="280" font-size="13">field in spec. CLI 1.21.0 or above.</text>
+    <text x="482" y="302" font-size="13">Job example pins environment version 6.</text>
+    <text x="482" y="324" font-size="13">Requirements say 5 and above for both.</text>
+    <text x="482" y="346" font-size="13">Version 5 is Connect 18. Version 6 is 19.</text>
+    <text x="482" y="368" font-size="13">A stale uv.lock skips the lock and skips</text>
+    <text x="482" y="390" font-size="13">installing the project package.</text>
+    <text x="482" y="412" font-size="13">Each task keeps an isolated environment.</text>
+    <text x="482" y="434" font-size="13">Wheel tasks need an absolute path.</text>
+
+    <rect x="36" y="474" width="848" height="258" rx="8" fill="#ffffff" stroke="#021a40"/>
+    <text x="56" y="502" font-size="16" font-weight="700">The notes, the feature page, and the API do not share a scope.</text>
+    <text x="56" y="528" font-size="13">October notes: notebook tasks and Python script tasks. Feature pages add Python wheel tasks.</text>
+    <text x="56" y="550" font-size="13">A relative project_environment path is the Python file example. Wheel tasks refuse it.</text>
+    <text x="56" y="572" font-size="13">Jobs API reference: environment_version or base_environment is required. No project_environment field.</text>
+    <text x="56" y="594" font-size="13">dbt steps and JAR steps do not offer Environment source Project. Pipelines stay on the 11 September page.</text>
+    <text x="56" y="616" font-size="13">That page still uses an editable install, and it tells pipelines to list dependencies in pipeline.yml.</text>
+    <text x="56" y="638" font-size="13">Serverless notes on AWS and Google Cloud, header 22 October: newest entry is the 23 October cache preview.</text>
+    <text x="56" y="660" font-size="13">Azure serverless notes match that shape. A notebook or job may land on aarch64 or x86_64.</text>
+    <text x="56" y="682" font-size="13">Hatchling plus a current uv.lock installs the project. %uv lock --check is the page's comparison.</text>
+    <text x="56" y="704" font-size="13">No compliance exclusion, government-cloud line, or separate meter on these pages. Rollout can take a week.</text>
+  </g>
+</svg>
